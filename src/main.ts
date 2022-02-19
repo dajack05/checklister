@@ -1,3 +1,5 @@
+import { DataStore } from "./DataStore";
+
 window.onload = () => {
     loadItems();
 };
@@ -11,8 +13,17 @@ async function loadItems() {
     populateButtons();
 }
 
+async function publishChanges() {
+    const ret = await fetch("api/saveItems.php?data=" + JSON.stringify(store));
+    const text = await ret.text();
+    if (text.length > 0) {
+        console.error(text);
+    }
+}
+
 function populateButtons() {
     const buttonHolder = document.getElementById('buttonHolder');
+    buttonHolder.innerHTML = "";
     for (const item of store.items) {
         const elem = document.createElement('button');
         elem.innerText = item.label;
@@ -22,6 +33,8 @@ function populateButtons() {
         }
         elem.addEventListener('click', () => {
             item.checked = !item.checked;
+            publishChanges();
+            populateButtons();
         });
         buttonHolder.appendChild(elem);
     }

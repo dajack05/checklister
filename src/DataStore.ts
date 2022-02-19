@@ -1,10 +1,10 @@
-class CheckItem {
+export class CheckItem {
     id: number;
     label: string;
     checked: boolean;
 }
 
-class DataStore {
+export class DataStore {
     items: CheckItem[] = [];
 
     static FromJson(json: any) {
