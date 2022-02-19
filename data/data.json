@@ -1,16 +1,1 @@
-{
-  "items": [
-    {
-      "label": "Turn On Lights",
-      "checked": 0
-    },
-    {
-      "label": "Turn On Mixer",
-      "checked": 1
-    },
-    {
-      "label": "Turn On Speakers",
-      "checked": 0
-    }
-  ]
-}
+{"items":[{"id":0,"label":"Turn On Lights","checked":false},{"id":1,"label":"Turn On Mixer","checked":false},{"id":2,"label":"Turn On Speakers","checked":true}]}

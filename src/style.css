@@ -17,6 +17,11 @@
     --col-orange: #ee9c5d;
 }
 
+@font-face {
+    font-family: coolville;
+    src: url(assets/Coolville.ttf);
+}
+
 body {
     display: flex;
     align-content: center;
@@ -24,15 +29,18 @@ body {
 
     padding: 10em;
     background-color: var(--col-cyan);
+
+    font-family: coolville;
 }
 
-#checklistHolder {
+#buttonHolder {
     display: flex;
 }
 
 .check {
-    width: 6em;
-    height: 6em;
+    font-family: coolville;
+    width: 6rem;
+    height: 6rem;
 
     border: none;
     background-color: rgba(0, 0, 0, 0);
@@ -40,6 +48,14 @@ body {
     margin: 1em;
 
     background-size: contain;
+    font-size: large;
+
+    background-image: url("assets/button3.png");
+}
+
+.check:hover {
+    padding-top: 1em;
+    background-image: url("assets/button4.png");
 }
 
 .checked {
@@ -48,16 +64,4 @@ body {
 
 .checked:hover {
     background-image: url("assets/button2.png");
-
-    padding-top: 1em;
-}
-
-.unchecked {
-    background-image: url("assets/button3.png");
-}
-
-.unchecked:hover {
-    background-image: url("assets/button4.png");
-
-    padding-top: 1em;
 }
