@@ -1,5 +1,6 @@
 :root {
   --col-bg: #343434;
+  --col-box-bg: #afbfd2;
   image-rendering: pixelated;
 }
 
@@ -20,39 +21,55 @@ body {
 }
 
 .box {
-  border: 10px solid transparent;
-  border-image: url(assets/bg.png) 4 repeat;
-  background-color: #afbfd2;
+  border: 2rem solid transparent;
+  border-image: url(assets/bg.png) 8 repeat;
+  background-color: var(--col-box-bg);
+
+  padding-top: 2rem;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
-.check {
-  font-family: coolville;
-  width: 8rem;
-  height: 4rem;
+.item {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 0.5em;
+
+  align-items: center;
+}
+
+.check-label {
+  padding-left: 1em;
+}
+
+.check-btn {
+  width: 4em;
+  height: 4em;
 
   border: none;
   background-color: rgba(0, 0, 0, 0);
 
-  margin: 0.5em;
-
   background-size: contain;
-  font-size: large;
+  background-repeat: no-repeat;
 
-  background-image: url("assets/button3.png");
+  background-image: url("assets/buttons1.png");
 }
 
-.check:hover {
+.check-btn:hover {
   padding-top: 0.5em;
-  background-image: url("assets/button4.png");
+  background-image: url("assets/buttons2.png");
 }
 
-.checked {
-  background-image: url("assets/button1.png");
+.check-btn.checked {
+  background-image: url("assets/buttons3.png");
 }
 
-.checked:hover {
-  background-image: url("assets/button2.png");
+.check-btn.checked:hover {
+  background-image: url("assets/buttons4.png");
+}
+
+.check-label.checked {
+  text-decoration: line-through;
 }
