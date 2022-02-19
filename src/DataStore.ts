@@ -4,18 +4,26 @@ export class CheckItem {
     checked: boolean;
 }
 
+export class CheckList {
+    id: number;
+    label: string;
+    items: CheckItem[];
+}
+
 export class DataStore {
-    items: CheckItem[] = [];
+    lists: CheckList[] = [];
     onChange = () => { };
 
     private intervalID: number;
 
     toggleItem(id: number) {
-        for (const item of this.items) {
-            if (item.id === id) {
-                item.checked = !item.checked;
-                this.save();
-                return;
+        for (const list of this.lists) {
+            for (const item of list.items) {
+                if (item.id === id) {
+                    item.checked = !item.checked;
+                    this.save();
+                    return;
+                }
             }
         }
     }
@@ -34,8 +42,8 @@ export class DataStore {
         const ret = await fetch("api/loadItems.php?name=" + name);
         const json = await ret.json();
 
-        if (json.items) {
-            this.items = json.items;
+        if (json.lists) {
+            this.lists = json.lists;
         }
 
         this.onChange();
@@ -46,6 +54,6 @@ export class DataStore {
         }
         this.intervalID = setInterval(() => {
             this.load(name);
-        }, 1000);
+        }, 10000);
     }
 }

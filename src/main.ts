@@ -12,25 +12,36 @@ window.onload = async () => {
 function populateButtons() {
     const buttonHolder = document.getElementById('buttonHolder');
     buttonHolder.innerHTML = "";
-    for (const item of store.items) {
-        const holder = document.createElement('div') as HTMLDivElement;
-        const button = document.createElement('button') as HTMLButtonElement;
-        const label = document.createElement('strong') as HTMLLabelElement;
+    for (const list of store.lists) {
+        const listDiv = document.createElement('div') as HTMLDivElement;
+        const listLabel = document.createElement('h1') as HTMLHeadingElement;
+        listLabel.innerText = list.label;
 
-        button.classList.add('check-btn');
-        label.classList.add('check-label');
-        label.innerText = item.label;
+        listDiv.classList.add('box');
+        listDiv.appendChild(listLabel);
 
-        if (item.checked) {
-            button.classList.add('checked');
-            label.classList.add('checked');
+        for (const item of list.items) {
+            const holder = document.createElement('div') as HTMLDivElement;
+            const button = document.createElement('button') as HTMLButtonElement;
+            const label = document.createElement('h2') as HTMLHeadingElement;
+
+            button.classList.add('check-btn');
+            label.classList.add('check-label');
+            label.innerText = item.label;
+
+            if (item.checked) {
+                button.classList.add('checked');
+                label.classList.add('checked');
+            }
+            button.addEventListener('click', () => store.toggleItem(item.id));
+
+            holder.classList.add('item');
+            holder.appendChild(button);
+            holder.appendChild(label);
+
+            listDiv.appendChild(holder);
         }
-        button.addEventListener('click', () => store.toggleItem(item.id));
 
-        holder.classList.add('item');
-        holder.appendChild(button);
-        holder.appendChild(label);
-
-        buttonHolder.appendChild(holder);
+        buttonHolder.appendChild(listDiv);
     }
 }
