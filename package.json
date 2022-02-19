@@ -1,7 +1,7 @@
 {
   "packageManager": "yarn@3.1.1",
   "scripts": {
-    "build": "webpack"
+    "dev": "webpack --watch"
   },
   "devDependencies": {
     "ts-loader": "^9.2.6",

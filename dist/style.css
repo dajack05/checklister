@@ -1,68 +1,58 @@
 :root {
-    /* --col-red: #ab6187;
-    --col-orange: #ebc686;
-    --col-white: #d8e8e6;
-    --col-green: #65db73;
-    --col-blue: #709dcf;
-    --col-gray: #5a687d;
-    --col-black: #211e33; */
-
-    --col-cyan: #6eb8a8;
-    --col-cyan-dk: #2a584f;
-    --col-green: #74a33f;
-    --col-yello: #fcffc0;
-    --col-red: #c6505a;
-    --col-red-deep: #2f142f;
-    --col-red-dk: #774448;
-    --col-orange: #ee9c5d;
+  --col-bg: #343434;
+  image-rendering: pixelated;
 }
 
 @font-face {
-    font-family: coolville;
-    src: url(assets/Coolville.ttf);
+  font-family: coolville;
+  src: url(assets/Coolville.ttf);
 }
 
 body {
-    display: flex;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
 
-    padding: 10em;
-    background-color: var(--col-cyan);
+  padding: 10em;
+  background-color: var(--col-bg);
 
-    font-family: coolville;
+  font-family: coolville;
 }
 
-#buttonHolder {
-    display: flex;
+.box {
+  border: 10px solid transparent;
+  border-image: url(assets/bg.png) 4 repeat;
+  background-color: #afbfd2;
+
+  display: flex;
+  flex-direction: row;
 }
 
 .check {
-    font-family: coolville;
-    width: 8rem;
-    height: 4rem;
-    image-rendering: pixelated;
+  font-family: coolville;
+  width: 8rem;
+  height: 4rem;
 
-    border: none;
-    background-color: rgba(0, 0, 0, 0);
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
 
-    margin: 1em;
+  margin: 0.5em;
 
-    background-size: contain;
-    font-size: large;
+  background-size: contain;
+  font-size: large;
 
-    background-image: url("assets/button3.png");
+  background-image: url("assets/button3.png");
 }
 
 .check:hover {
-    padding-top: 0.5em;
-    background-image: url("assets/button4.png");
+  padding-top: 0.5em;
+  background-image: url("assets/button4.png");
 }
 
 .checked {
-    background-image: url("assets/button1.png");
+  background-image: url("assets/button1.png");
 }
 
 .checked:hover {
-    background-image: url("assets/button2.png");
+  background-image: url("assets/button2.png");
 }
