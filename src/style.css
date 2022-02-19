@@ -31,20 +31,33 @@ body {
 }
 
 .check {
-    width: 8em;
-    height: 7em;
+    width: 6em;
+    height: 6em;
 
     border: none;
-
-    border-radius: 1em;
+    background-color: rgba(0, 0, 0, 0);
 
     margin: 1em;
+
+    background-size: contain;
 }
 
 .checked {
-    background-color: var(--col-green);
+    background-image: url("assets/button1.png");
+}
+
+.checked:hover {
+    background-image: url("assets/button2.png");
+
+    padding-top: 1em;
 }
 
 .unchecked {
-    background-color: var(--col-red);
+    background-image: url("assets/button3.png");
+}
+
+.unchecked:hover {
+    background-image: url("assets/button4.png");
+
+    padding-top: 1em;
 }
