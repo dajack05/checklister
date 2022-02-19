@@ -20,6 +20,9 @@ function populateButtons() {
         if (item.checked) {
             elem.classList.add('checked');
         }
+        elem.addEventListener('click', () => {
+            item.checked = !item.checked;
+        });
         buttonHolder.appendChild(elem);
     }
 }

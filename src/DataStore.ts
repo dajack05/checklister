@@ -1,17 +1,13 @@
 class CheckItem {
-    constructor(id, label, checked) {
-        this.id = id;
-        this.label = label;
-        this.checked = checked;
-    }
+    id: number;
+    label: string;
+    checked: boolean;
 }
 
 class DataStore {
-    constructor() {
-        this.items = [];
-    }
+    items: CheckItem[] = [];
 
-    static FromJson(json) {
+    static FromJson(json: any) {
         if (!json.items) {
             console.error("Failed to parse JSON. Missing Items.", json);
             return;
@@ -20,7 +16,7 @@ class DataStore {
         const store = new DataStore();
 
         for (const item of json.items) {
-            store.items.push(new CheckItem(item.id, item.label, item.checked));
+            store.items.push(item as CheckItem);
         }
 
         return store;

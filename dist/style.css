@@ -39,8 +39,9 @@ body {
 
 .check {
     font-family: coolville;
-    width: 6rem;
-    height: 6rem;
+    width: 8rem;
+    height: 4rem;
+    image-rendering: pixelated;
 
     border: none;
     background-color: rgba(0, 0, 0, 0);
@@ -54,7 +55,7 @@ body {
 }
 
 .check:hover {
-    padding-top: 1em;
+    padding-top: 0.5em;
     background-image: url("assets/button4.png");
 }
 
