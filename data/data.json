@@ -1,3 +1,16 @@
 {
-    "Hello":"World"
+  "items": [
+    {
+      "label": "Turn On Lights",
+      "checked": 0
+    },
+    {
+      "label": "Turn On Mixer",
+      "checked": 1
+    },
+    {
+      "label": "Turn On Speakers",
+      "checked": 0
+    }
+  ]
 }

@@ -1,0 +1,50 @@
+:root {
+    /* --col-red: #ab6187;
+    --col-orange: #ebc686;
+    --col-white: #d8e8e6;
+    --col-green: #65db73;
+    --col-blue: #709dcf;
+    --col-gray: #5a687d;
+    --col-black: #211e33; */
+
+    --col-cyan: #6eb8a8;
+    --col-cyan-dk: #2a584f;
+    --col-green: #74a33f;
+    --col-yello: #fcffc0;
+    --col-red: #c6505a;
+    --col-red-deep: #2f142f;
+    --col-red-dk: #774448;
+    --col-orange: #ee9c5d;
+}
+
+body {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    padding: 10em;
+    background-color: var(--col-cyan);
+}
+
+#checklistHolder {
+    display: flex;
+}
+
+.check {
+    width: 8em;
+    height: 7em;
+
+    border: none;
+
+    border-radius: 1em;
+
+    margin: 1em;
+}
+
+.checked {
+    background-color: var(--col-green);
+}
+
+.unchecked {
+    background-color: var(--col-red);
+}
