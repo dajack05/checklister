@@ -1,8 +1,8 @@
 :root {
   --col-bg: #343434;
   --col-box-bg: #afbfd2;
-  image-rendering: crisp-edges;
   image-rendering: -moz-crisp-edges;
+  image-rendering: pixelated;
 }
 
 @font-face {
